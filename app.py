@@ -157,4 +157,4 @@ def placeholder_image(width, height):
     return f"Placeholder image {width}x{height}", 200
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
