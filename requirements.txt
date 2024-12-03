@@ -1,4 +1,5 @@
 Flask==3.0.3
+gunicorn
 google-auth==2.23.3
 google-auth-oauthlib==1.0.0
 google-pasta==0.2.0
