@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mohammad Saud Afzal - Home</title>
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/linericon/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Saud Afzal - Academic Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #67c23a;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+            --border-color: #ddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .profile-section {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .profile-info h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .interests {
+            margin: 1rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .interest-tag {
+            background: var(--light-gray);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .stats {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            background: var(--light-gray);
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+            transition: transform 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-2px);
+        }
+
+        .stat-box h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .publications {
+            margin-top: 3rem;
+        }
+
+        .filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .search-bar {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .year-filter {
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            min-width: 100px;
+        }
+
+        .publication-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .publication-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .publication-title {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            text-decoration: none;
+            display: block;
+        }
+
+        .publication-title:hover {
+            text-decoration: underline;
+        }
+
+        .publication-authors {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-journal {
+            color: #888;
+            font-style: italic;
+        }
+
+        .publication-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+
+        .publication-year {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .citations {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        .error-message {
+            color: #dc3545;
+            padding: 1rem;
+            text-align: center;
+            background: #ffe6e6;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .stats {
+                justify-content: center;
+            }
+        }
+        .horizontal-list {
+        list-style-type: disc; /* Keeps the bullet points */
+        display: flex; /* Makes the list horizontal */
+        gap: 1rem; /* Adds spacing between items */
+        padding: 0; /* Removes default padding */
+        margin: 0; /* Removes default margin */
+    }
+
+        .horizontal-list li {
+            display: inline; /* Ensures list items are inline */
+        }
+    </style>
+</head>
+<body>
+    <header class="header_area">
+        <div class="main_menu" id="mainNav">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container box_1620">
+                    <!-- Logo -->
+                    <a class="navbar-brand logo_h" href="{{ url_for('portfolio') }}">
+                        <img src="{{ url_for('static', filename='img/iitlogo.png') }}" alt="IIT KGP Logo"
+                            style="width: 270px; height: auto;">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Navigation Links -->
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav ml-auto">
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+                            <!-- <li class="nav-item"><a class="nav-link" href="{{ url_for('services') }}">Teams</a></li> -->
+                            <!-- <li class="nav-item"><a class="nav-link" href="{{ url_for('alumini') }}">Alumni Members</a></li> -->
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('portfolio') }}">Portfolio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- push the body a little down  -->
+    <div style="margin-top: 150px;"></div>
+    <div class="container">
+        <div class="profile-section">
+            <img src="{{url_for('static', filename = 'img/sir-image.png')}}" alt="Mohammad Saud Afzal" class="profile-image"
+                style="width: 300px; height: 300px;">
+
+            <div class="profile-info">
+                <h1 id="scholar-name">Loading...</h1>
+                <h2 id="scholar-affiliation">Loading...</h2>
+                
+                <div class="contact-info">
+                    <p><a id="scholar-email" href="#"></a></p>
+                </div>
+
+                <div class="interests" id="scholar-interests">
+                    <!-- Interests will be populated by JavaScript -->
+                    <ul class="horizontal-list">
+                        <li>Computational Fluid Dynamics</li>
+                        <li>Coastal Engineering</li>
+                        <li>Hydraulic Engineering</li>
+                        <li>Ocean Engineering</li>
+                    </ul>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://scholar.google.com/citations?user=f34uj7UAAAAJ&hl=en" title="Google Scholar" id="scholar-profile"><i class="fab fa-google"></i></a>
+                    <a href="https://www.researchgate.net/profile/Mohammad-Saud-Afzal" title="Research Gate"><i class="fas fa-flask"></i></a>
+                    <a href="http://www.facweb.iitkgp.ac.in/~saud/" title="Personal Website"><i class="fas fa-globe"></i></a>
+                    <a href="mailto:saud@civil.iitkgp.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+
+                <div class="stats" id="citation-stats">
+                    <!-- Stats will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <div class="publications">
+            <div class="filters">
+                <input type="text" class="search-bar" placeholder="Search publications by title, authors, or journal...">
+                <select class="year-filter" id="year-filter">
+                    <option value="">All Years</option>
+                    <!-- Years will be populated by JavaScript -->
+                </select>
+            </div>
+            
+            <div class="publication-list">
+                <!-- Publications will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Utility functions
+        function formatNumber(num) {
+            return new Intl.NumberFormat().format(num);
+        }
+
+        // Load scholar data
+        async function loadScholarData() {
+            try {
+                const response = await fetch('/api/scholar-data');
+                const data = await response.json();
+                
+                // Update profile information
+                document.getElementById('scholar-name').textContent = data.name;
+                document.getElementById('scholar-affiliation').textContent = data.affiliation;
+                document.getElementById('scholar-email').textContent = "saud@civil.iitkgp.ac.in";
+                document.getElementById('scholar-email').href = `mailto:${data.email}`;
+
+                // // Update interests
+                // const interestsContainer = document.getElementById('scholar-interests');
+                // interestsContainer.innerHTML = data.interests
+                //     .map(interest => `<span class="interest-tag">${interest}</span>`)
+                //     .join('');
+
+                // Update citation stats
+                const statsContainer = document.getElementById('citation-stats');
+                statsContainer.innerHTML = `
+                    <div class="stat-box">
+                        <h3>${formatNumber(data.citations.total)}</h3>
+                        <p>Citations</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>${data.citations.h_index}</h3>
+                        <p>h-index</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>${data.citations.i10_index}</h3>
+                        <p>i10-index</p>
+                    </div>
+                `;
+            } catch (error) {
+                console.error('Error loading scholar data:', error);
+                showError('Failed to load scholar profile data');
+            }
+        }
+
+        // Load and display publications
+        async function loadPublications(searchTerm = '', yearFilter = '') {
+            const publicationList = document.querySelector('.publication-list');
+            publicationList.innerHTML = '<div class="loading">Loading publications...</div>';
+
+            try {
+                const queryParams = new URLSearchParams();
+                if (searchTerm) queryParams.append('search', searchTerm);
+                if (yearFilter) queryParams.append('year', yearFilter);
+
+                const response = await fetch(`/api/publications?${queryParams}`);
+                const publications = await response.json();
+
+                if (publications.length === 0) {
+                    publicationList.innerHTML = '<div class="loading">No publications found</div>';
+                    return;
+                }
+
+                // Update year filter options
+                updateYearFilterOptions(publications);
+
+                // Display publications
+                publicationList.innerHTML = publications
+                    .map(pub => createPublicationCard(pub))
+                    .join('');
+            } catch (error) {
+                console.error('Error loading publications:', error);
+                showError('Failed to load publications');
+            }
+        }
+
+        function createPublicationCard(pub) {
+            return `
+                <div class="publication-card">
+                    <a href="${pub.link}" class="publication-title" target="_blank">${pub.title}</a>
+                    <p class="publication-authors">${pub.authors}</p>
+                    <p class="publication-journal">${pub.journal}</p>
+                    <div class="publication-meta">
+                        <span class="publication-year">${pub.year}</span>
+                        ${pub.citations > 0 ? 
+                            `<span class="citations">
+                                <i class="fas fa-quote-right"></i>
+                                ${formatNumber(pub.citations)} citations
+                            </span>` : 
+                            ''
+                        }
+                    </div>
+                </div>
+            `;
+        }
+
+        function updateYearFilterOptions(publications) {
+            const yearFilter = document.getElementById('year-filter');
+            const years = [...new Set(publications.map(pub => pub.year))]
+                .sort((a, b) => b - a);
+
+            const currentValue = yearFilter.value;
+            yearFilter.innerHTML = '<option value="">All Years</option>' +
+                years.map(year => `<option value="${year}">${year}</option>`).join('');
+            yearFilter.value = currentValue;
+        }
+
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            document.querySelector('.publication-list').prepend(errorDiv);
+        }
+
+        // Event listeners
+        document.querySelector('.search-bar').addEventListener('input', (e) => {
+            loadPublications(e.target.value, document.getElementById('year-filter').value);
+        });
+
+        document.getElementById('year-filter').addEventListener('change', (e) => {
+            loadPublications(document.querySelector('.search-bar').value, e.target.value);
+        });
+
+        // Initial load
+        loadScholarData();
+        loadPublications();
+    </script>
+</body>
+</html>

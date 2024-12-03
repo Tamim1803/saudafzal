@@ -1,0 +1,230 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body style="font-family: 'Roboto', sans-serif;">
+  <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <div class="row">
+          <div class="col" style="margin-top: 10%;">
+            <h5 style="margin-bottom: 1%;float: right">Mohammad Saud Afzal</h5>
+            <p style="float: right;line-height: 80%;">
+              <sub style="float: right">Assistant Professor</sub><br/>
+              <sub style="float: right">Indian Institute of Technology</sub><br/>
+              <sub style="float: right">Kharagpur</sub>
+            </p>
+          </div>
+          <div>
+            <img src="img/saudAfzal.JPG" width="100" height="120" style="float: right"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-sm-2" style="border-right: 1px solid;"> </div>
+      <div class="col-sm-6" style="border-right: 1px solid;"> </div>
+      <div class="col-sm-4">
+        <div class="list-group" id="attributeList">
+          <a href="#" class="list-group-item list-group-item-action" onclick="gotoAttributeDetails('contact')">Contact Information</a>
+          <a href="#" class="list-group-item list-group-item-action" onclick="gotoAttributeDetails('rInterest')">Research Interests</a>
+          <a href="#" class="list-group-item list-group-item-action" onclick="gotoAttributeDetails('education')">Education</a>
+          <a href="#" class="list-group-item list-group-item-action" onclick="gotoAttributeDetails('wExperience')">Work Experience</a>
+          <a href="#" class="list-group-item list-group-item-action">Awards</a>
+          <a href="#" class="list-group-item list-group-item-action">Students Supervision</a>
+          <a href="#" class="list-group-item list-group-item-action">Teaching Experience</a>
+          <a href="#" class="list-group-item list-group-item-action">Journal and International Conference Publications</a>
+          <a href="#" class="list-group-item list-group-item-action">Research Projects</a>
+          <a href="#" class="list-group-item list-group-item-action">Commercial Projects</a>
+          <a href="#" class="list-group-item list-group-item-action">Professional Associations</a>
+          <a href="#" class="list-group-item list-group-item-action">Softwares and Computational Skills</a>
+          <a href="#" class="list-group-item list-group-item-action">Extra Curricular Activities</a>
+        </div>
+        <div id="panelDisplay">
+          <!--------------------->
+            <div id="contact" class="dList">
+              <div class="card">
+                <div class="card-header"><strong>Contact Information</strong></div>
+                <div class="card-body">
+                  <p class="card-text text-center">
+                    <span>Indian Institute of Technology<br/> Kharagpur
+                    Kharagpur, West Bengal - 721302</span><br/>
+                    <span>Phone : +917236886666</span><br/>
+                    <span>Email : saud@civil.iitkgp.ac.in</span>
+                  </p>
+                  <a href="#" class="btn btn-primary float-right" onclick="gotoAttribute('contact')">Back</a>
+                </div>
+              </div>
+            </div>
+          <!--------------------->
+            <div id="rInterest" class="dList">
+              <div class="card">
+                <div class="card-header"><strong>Research Interests</strong></div>
+                <div class="card-body">
+                  <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action">Numerical modeling</a>
+                    <a href="#" class="list-group-item list-group-item-action">OffshoreWind Energy</a>
+                    <a href="#" class="list-group-item list-group-item-action">Waves</a>
+                    <a href="#" class="list-group-item list-group-item-action">Hydrodynamics</a>
+                    <a href="#" class="list-group-item list-group-item-action">Sediment Transport</a>
+                    <a href="#" class="list-group-item list-group-item-action">Computational Fluid Dynamics</a>
+                    <a href="#" class="list-group-item list-group-item-action">Port Planning</a>
+                    <a href="#" class="list-group-item list-group-item-action">Education</a>
+                    <a href="#" class="list-group-item list-group-item-action">Design of coastal structures</a>
+                    <a href="#" class="list-group-item list-group-item-action">Coastal Engineering in Arctic Areas</a>
+                  </div>
+                  <a href="#" class="btn btn-primary float-right" onclick="gotoAttribute('rInterest')">Back</a>
+                </div>
+              </div>
+            </div>
+          <!--------------------->
+            <div id="education" class="dList">
+              <div class="card">
+                <div class="card-header"><strong>Education</strong></div>
+                <div class="card-body">
+                  <div class="list-group list-group-flush">
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"><strong>Norwegian University of Science and Technology</strong></h5>
+                        <small>Trondheim, Norway</small>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">PhD., Department of Marine Technology, Sept 2013-March 2017
+                          <ul>
+                            <li>Title: Three-dimensional streaming in seabed boundary layer</li>
+                            <li>Advisor: Dag Myrhaug, Professor and Lars Erik Holmedal, Professor</li>
+                          </ul>
+                        </li>
+                        <li class="list-group-item">M.S., Coastal and Marine Engineering and Management, June 2013
+                          <ul>
+                            <li>MSc Thesis: 3D Numerical Modeling of Sediment Transport under combined current and waves</li>
+                            <li>Advisor: Øivind A. Arntsen, Associate Professor</li>
+                            <li>Average Grade: A</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"><strong>Indian Institute of Technology</strong></h5>
+                        <small class="text-muted">Kanpur, India</small>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">B.Tech., Civil Engineering , July 2008</li>
+                      </ul>
+                    </a>
+                  </div>
+                  <a href="#" class="btn btn-primary float-right" onclick="gotoAttribute('education')">Back</a>
+                </div>
+              </div>
+            </div>
+          <!--------------------->
+            <div id="wExperience" class="dList">
+              <div class="card">
+                <div class="card-header"><strong>Work Experience</strong></div>
+                <div class="card-body">
+                  <div class="list-group list-group-flush">
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"><strong>Assistant Professor</strong></h5>
+                        <small class="text-muted">Nov 2017- Present</small>
+                      </div>
+                      <p class="mb-1">Department of Civil Engineering, Indian Institute of Technology, Kharagpur</p>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"><strong>Post-Doc</strong></h5>
+                        <small class="text-muted">Jan 2017- Nov 2017</small>
+                      </div>
+                      <p class="mb-1">Department of Civil and Enviromental Engineering,Norwegian University of Science and Technology</p>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"><strong>Hydraulic Engineer and Modeler</strong></h5>
+                        <small class="text-muted">July 2008- June 2011</small>
+                      </div>
+                      <p class="mb-1">Marine and Coastal Division,DHI India Water and Environment Pvt Ltd. <br/>Supervisor: Dr Ajay Pradhan</p>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"><strong>Research Assistant</strong></h5>
+                        <small class="text-muted">Jan 2013 to July 2013</small>
+                      </div>
+                      <p class="mb-1">Sustainable Arctic Marine and Coastal Technology, Norwegian University of Science and Technology.<br/> Supervisor: Professor Sveinung Løset</p>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"><strong>Assistant Professor</strong></h5>
+                        <small class="text-muted">Nov 2017- Present</small>
+                      </div>
+                      <p class="mb-1">Department of Civil Engineering, Indian Institute of Technology, Kharagpur</p>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"><strong>Research Assistant</strong></h5>
+                        <small class="text-muted">Jan 2013 to July 2013</small>
+                      </div>
+                      <p class="mb-1">Marine Civil Engineering, Norwegian University of Science and Technology.<br/> Supervisor: Associate Prof Raed Lubbad</p>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"><strong>Internship</strong></h5>
+                        <small class="text-muted">Aug 2012 to Sep 2012</small>
+                      </div>
+                      <p class="mb-1">Department of Civil and Environmental Engineering, Norwegian University of Science and Technology.<br/> Supervisor: Associate Professor Øivind A. Arntsen</p>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"><strong>Summer Intern</strong></h5>
+                        <small class="text-muted">May 2007- Jul 2007</small>
+                      </div>
+                      <p class="mb-1">Department of Environmental and Hydraulic Engineering, E2 Consulting Engineers, Oakland, California USA. <br/>Supervisor: Dr Chip Poalinelli</p>
+                    </a>
+                  </div>
+                  <a href="#" class="btn btn-primary float-right" onclick="gotoAttribute('wExperience')">Back</a>
+                </div>
+              </div>
+            </div>
+          <!--------------------->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery library -->
+  <script src="js/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="js/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
