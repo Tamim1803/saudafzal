@@ -9,7 +9,7 @@ current_dir = os.getcwd()
 app = Flask(__name__, template_folder=current_dir)
 
 # Cache configuration
-CACHE_DURATION = 6048  # Cache duration in seconds 
+CACHE_DURATION = 2592000  # Cache duration in seconds 
 
 # Custom static file serving
 @app.route('/<path:filename>')
@@ -122,6 +122,12 @@ def index():
 def serve_static_file(filename):
     # Serve static files from the custom directory
     return send_from_directory('public_html', filename)
+
+@app.route('/api/scholar-data')
+def get_scholar_data():
+    data = scholar_api.get_scholar_data()
+    return jsonify(data['profile'])
+
 
 # API endpoint for publications with search and filter capabilities
 @app.route('/api/publications')
